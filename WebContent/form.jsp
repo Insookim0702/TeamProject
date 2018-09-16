@@ -57,7 +57,7 @@
 			<tbody id ="dataView"></tbody>
 			
 	</table></span>
-		
+<!-- admin 계정이 로그인 됐을 때    --관리자가 보는 페이지-->
 	<c:if test="${not empty sessionScope.name }">
 	<span><table>
 	<tr><td colspan ="3" align="center"><h2>관리자</h2></td></tr>
@@ -108,7 +108,7 @@
 		</table></span>
 		</c:if>
 		
-		
+<!-- admin 계정이 로그인 안 됐을 때    --일반사용자가 보는 페이지-->
 		<c:if test="${empty sessionScope.name }">
 			<span><table>
 			<tr><td colspan ="3" align="center"><h2>학생</h2></td></tr>
