@@ -48,5 +48,5 @@ public class MemberIdCheckAction extends HttpServlet {
 			e.printStackTrace();
 			request.setAttribute("errorMsg", "데이터베이스에 접근 못했습니다.");
 		}
-	}
+	} 
 }
