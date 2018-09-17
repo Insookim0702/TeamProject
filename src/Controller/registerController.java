@@ -29,39 +29,10 @@ public class registerController extends HttpServlet {
 				register(request, response);
 			}
 			reload(request, response);
-			/*else if(command.equals("reload")) {
-				reload(request, response);
-			}*/
 	}
-	
-	private void reload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			//데이터베이스에서 입실된 침대 번호 가져온다
-			String bednum1 = DAO.getbednum1();
-			String bednum2 = DAO.getbednum2();
-			String bednum3 = DAO.getbednum3();
-			String bednum4 = DAO.getbednum4();
-			String bednum5 = DAO.getbednum5();
-			String bednum6 = DAO.getbednum6();
-			String bednum7 = DAO.getbednum7();
-			String bednum8 = DAO.getbednum8();
-			String bednum9 = DAO.getbednum9();
-			request.setAttribute("bednum1", bednum1);   
-			request.setAttribute("bednum2", bednum2);
-			request.setAttribute("bednum3", bednum3);
-			request.setAttribute("bednum4", bednum4);
-			request.setAttribute("bednum5", bednum5);
-			request.setAttribute("bednum6", bednum6);
-			request.setAttribute("bednum7", bednum7);
-			request.setAttribute("bednum8", bednum8);
-			request.setAttribute("bednum9", bednum9);
-			request.getRequestDispatcher("form.jsp").forward(request, response);
-		}catch(Exception e) {
-			e.printStackTrace();
-			request.setAttribute("errorMsg","죄송합니다. 잠시 후에 재 실행해 주세요.");
-		}
-	}
-	/*===============학생 입실 시 등록 정보 DB로 전송==================*/
+	/*
+	 * ===============학생 입실 시 등록 정보 DB로 전송==================
+	 */
 	private void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -75,17 +46,27 @@ public class registerController extends HttpServlet {
 			
 			DAO registerdao = new DAO();
 			registerdao.insertregister(dto);
-			
+		}catch(Exception e) {
+			e.printStackTrace();
+			request.setAttribute("errorMsg","죄송합니다. 잠시 후에 재 실행해 주세요.");
+		}
+	}
+	
+	/*
+	 * 입실상태인 침대번호를 form.jsp에  뿌려준다.
+	 */
+	private void reload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 			//데이터베이스에서 입실된 침대 번호 가져온다
-			String bednum1 = DAO.getbednum1();
-			String bednum2 = DAO.getbednum2();
-			String bednum3 = DAO.getbednum3();
-			String bednum4 = DAO.getbednum4();
-			String bednum5 = DAO.getbednum5();
-			String bednum6 = DAO.getbednum6();
-			String bednum7 = DAO.getbednum7();
-			String bednum8 = DAO.getbednum8();
-			String bednum9 = DAO.getbednum9();
+			String bednum1 = DAO.getbednum("1");
+			String bednum2 = DAO.getbednum("2");
+			String bednum3 = DAO.getbednum("3");
+			String bednum4 = DAO.getbednum("4");
+			String bednum5 = DAO.getbednum("5");
+			String bednum6 = DAO.getbednum("6");
+			String bednum7 = DAO.getbednum("7");
+			String bednum8 = DAO.getbednum("8");
+			String bednum9 = DAO.getbednum("9");
 			request.setAttribute("bednum1", bednum1);   
 			request.setAttribute("bednum2", bednum2);
 			request.setAttribute("bednum3", bednum3);
@@ -101,7 +82,4 @@ public class registerController extends HttpServlet {
 			request.setAttribute("errorMsg","죄송합니다. 잠시 후에 재 실행해 주세요.");
 		}
 	}
-	
-	
-
 }
