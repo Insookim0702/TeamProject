@@ -3,7 +3,7 @@
 - 개발 기간 :2018.07.25~ 버전 업 중....<br>
 - 사용 언어
  >  - Front-end : JSP/ CSS/ HTML/ JavaScript
- >  - 서버단 및 로직 개발 : Servlet /JAVA
+ >  - 서버단 및 로직 개발 : Tomcat -v8.5/ Servlet /JAVA
  > - Database :  Oracle Database
 ![stable_room Used Lang & Tool](https://user-images.githubusercontent.com/42515875/45603666-e79d2200-ba68-11e8-89dc-866848cc4d6d.png)
          
