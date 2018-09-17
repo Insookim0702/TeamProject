@@ -53,7 +53,7 @@ public class Allcontroller extends HttpServlet {
 		}catch(Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMsg","죄송합니다. 잠시 후에 재 실행해 주세요.");
-		}
+		} 
 		request.getRequestDispatcher(url).forward(request, response);
 	}	
 }
