@@ -17,12 +17,6 @@ import model.MemberDAO;
  */
 @WebServlet("/newprocess")
 public class newprocess extends HttpServlet {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		System.out.println("회원가입서버를 실행합니다.");
