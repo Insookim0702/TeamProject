@@ -38,7 +38,7 @@ public class loginlogout extends HttpServlet {
 					HttpSession session = request.getSession();
 					System.out.println("loginlogout.servlet : 로그인 아이디에 세션을 부여합니다.");
 					session.setAttribute("name", name);
-					response.sendRedirect("form.jsp");
+					response.sendRedirect("registerController?command=reload");
 					//request.getRequestDispatcher("form.jsp");
 					System.out.println("loginlogout.servlet : 로그인 처리를 무사히 완료하였습니다.");
 				}else {
@@ -61,6 +61,6 @@ public class loginlogout extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		session = null;
-		response.sendRedirect("form.jsp");
+		response.sendRedirect("registerController?command=reload");
 	}
 }
