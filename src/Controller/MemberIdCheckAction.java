@@ -30,7 +30,7 @@ public class MemberIdCheckAction extends HttpServlet {
 	protected void duplicationcheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		MemberDAO dao = new MemberDAO();
-		System.out.println("controler에서                        " + id);
+		System.out.println("controler에서                        " + id); 
 		try {
 			
 			boolean result = MemberDAO.duplicateIdCheck(id);
