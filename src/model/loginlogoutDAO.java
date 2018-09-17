@@ -42,7 +42,6 @@ public class loginlogoutDAO {
 		}
 		System.out.println("loginlogoutDAO :" + name);
 		return name;
-		
 	}
 
 
