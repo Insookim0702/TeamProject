@@ -10,7 +10,9 @@ import domain.registerDTO;
 import util.DBUtil;
 
 public class DAO {
-	/*===================년/월/일/시/분/초 반환하는 클래스===============================*/
+	/*
+	 * 년/월/일/시/분/초 반환하는 클래스
+	 */
 	Calendar cal = Calendar.getInstance();  //cal변수를 static으로 바꿔줘야 했다.
 	public String getYear() {
 		return String.valueOf(cal.get(Calendar.YEAR));
@@ -43,10 +45,8 @@ public class DAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			
 			ps = con.prepareStatement("select * from register where today = '"+day+"'");
 			rset = ps.executeQuery();
-			
 			all = new ArrayList<registerDTO>();
 			
 			while (rset.next()) {
@@ -60,13 +60,12 @@ public class DAO {
 		return all;
 	}
 	
-	/*======================년월일시분초를 DB에 저장하는 클래스=======================*/
+	/*
+	 * 년월일시분초를 DB에 저장하는 클래스
+	 */
 	public void insertregister(registerDTO dto) {
 		Connection con =null;
 		PreparedStatement ps =null;
-		//ResultSet rs =null;
-		//ArrayList<registerDTO> all = null;
-		
 		try {
 			con = DBUtil.getConnection();
 			String sql ="insert into register values(?,?,?,?,?,?,?,?)";
@@ -87,8 +86,10 @@ public class DAO {
 		}
 	}
 	
-	/* ====================침대번호 가져오기, 목적 : form.jsp에 뿌려서 침대 상태 표시=========================*/
-	public static String getbednum1() throws Exception{
+	/* 
+	 * 침대번호 가져오기, 목적 : form.jsp에 뿌려서 침대 상태 표시
+	 */
+	public static String getbednum(String no) throws Exception{
 		Connection con =null;
 		PreparedStatement ps =null;
 		ResultSet rs = null;
@@ -97,242 +98,18 @@ public class DAO {
 		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
 		try {
 			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='1' and today ='"+day+"'");
+			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='"+ no + "' and today ='"+day+"'");
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("1")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
+				System.out.println("DAO.java :"+ bednum +"이 입실 상태입니다.");
+				if(bednum.equals(no)) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
 					bednum ="true";
-					System.out.println(bednum);
+					System.out.println("DAO.java :" + no + "번 침대는 입실상태입니다. " + bednum);
 				}else {
 					bednum="false";
 					System.out.println(bednum);
 				}
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum2() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='2' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("2")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum3() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='3' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("3")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum4() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='4' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("4")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum5() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='5' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("5")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum6() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='6' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("6")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum7() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='7' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("7")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum8() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='8' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("8")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
-			}
-		}finally {
-			DBUtil.close(con,ps,rs);
-		}
-		return bednum;
-	}
-	public static String getbednum9() throws Exception{
-		Connection con =null;
-		PreparedStatement ps =null;
-		ResultSet rs = null;
-		String bednum =null;
-		DAO dao = new DAO();
-		String day = dao.getYear()+ " 년" + dao.getMonth()+ " 월" + dao.getDay()+ "일";
-		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement("select bednum from register where inout ='입실' and bednum='9' and today ='"+day+"'");
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				bednum =rs.getString(1);
-				System.out.println(bednum);
-				if(bednum.equals("9")) { //************************오류 생각 많이함.... 문자열은 equals()로 비교해야 한다.
-					bednum ="true";
-					System.out.println(bednum);
-				}else {
-					bednum="false";
-					System.out.println(bednum);
-				}
-				
 			}
 		}finally {
 			DBUtil.close(con,ps,rs);
