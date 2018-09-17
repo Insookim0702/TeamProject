@@ -1,10 +1,14 @@
 # StableProject 남학생 안정실 프로젝트
 - 개발자: 김인수 (기여도 100%)<br>
-- 사용 언어
-         
-
 - 개발 기간 :2018.07.25~ 버전 업 중....<br>
-- 개발 세부 내용 : MVC모델로 개발하였습니다. <br>
+- 사용 언어
+ >  - Front-end : JSP/ CSS/ HTML/ JavaScript
+    >  - 서버단 및 로직 개발 : Servlet /JAVA
+    > - Database :  Oracle Database
+![stable_room Used Lang & Tool](https://user-images.githubusercontent.com/42515875/45603666-e79d2200-ba68-11e8-89dc-866848cc4d6d.png)
+         
+## 개발 세부 내용 : MVC모델. <br>
+
 
 |MVC |  해당 파일 |
 |--|--|
