@@ -35,7 +35,7 @@ public class newprocess extends HttpServlet {
 		mdao.insertMember(bean);
 		System.out.println("DB에 내용을 저장했습니다..");
 		RequestDispatcher dis = request.getRequestDispatcher("jsp/login.jsp");
-		dis.forward(request, response);
+		dis.forward(request, response); 
 	}
 
 }
