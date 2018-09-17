@@ -62,5 +62,5 @@ public class DBUtil {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
+	} 
 }
