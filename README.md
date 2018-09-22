@@ -1,3 +1,4 @@
+
 # StableProject 남학생 안정실 프로젝트
 - 개발자: 김인수 (기여도 100%)<br>
 - 개발 기간 :2018.07.25~ 버전 업 중....<br>
@@ -27,14 +28,14 @@
 >  - 입퇴실 현황만 확인 가능.
 >   ![일반 사용자 페이지](https://user-images.githubusercontent.com/42515875/45603702-334fcb80-ba69-11e8-9952-9d987e2d4962.png)
  
- <br>
- ## 관리자가 보는 페이지<br>
+ 
+ ## 관리자가 보는 페이지
  > - 입퇴실 관리 가능.
  >  - 관리자 회원가입 가능.
  > ![enter image description here](https://user-images.githubusercontent.com/42515875/45603977-a1e15900-ba6a-11e8-98d6-2b02b9ffea2b.png)
-<br>
+
 ## 입실 등록
-<br>
+
 > - 관리자 권한으로 입실처리.
 >  - JSTL을 활용하여, **Click**한 **침대번호**를 {param?no=침대번호}을 사용해서 해당 **침대 번호**를 입실 페이지로 자동 전달.
 > ![enter image description here](https://user-images.githubusercontent.com/42515875/45604234-5da38800-ba6d-11e8-9c75-fa3c3b53a229.png)
@@ -54,8 +55,11 @@
 >   - **비밀번호** 및 **비밀번호 확인** 판별.
 >    ![enter image description here](https://user-images.githubusercontent.com/42515875/45603720-4ebad680-ba69-11e8-889f-fe0e908da003.png)
 
-<br>
-## 데이터베이스 
-![관리자 id ](https://user-images.githubusercontent.com/42515875/45603835-64300080-ba69-11e8-8968-f5475e368b8b.png)
-![입퇴실 현황](https://user-images.githubusercontent.com/42515875/45603836-65f9c400-ba69-11e8-9e2b-37e80dbd11a8.png)
 
+## 데이터베이스 
+> - 관리자 Id를 저장하고 있는 테이블
+
+![enter image description here](https://user-images.githubusercontent.com/42515875/45915987-6f37c600-be99-11e8-90d0-1e1393e42545.png)
+> - 입퇴실 현황을 저장하는 테이블
+
+>
