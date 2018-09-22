@@ -23,7 +23,6 @@
 
                 
 ## 일반 사용자가 보는 페이지
-<br>
 >  - 입퇴실 처리 불가능.
 >  - 입퇴실 현황만 확인 가능.
 >   ![일반 사용자 페이지](https://user-images.githubusercontent.com/42515875/45603702-334fcb80-ba69-11e8-9952-9d987e2d4962.png)
@@ -58,8 +57,8 @@
 <br>
 ## stable_room Used Lang & Tool<br>        
    >  - Front-end : JSP/ CSS/ HTML/ JavaScript
-    >  - 서버단 및 로직 개발 : Servlet /JAVA
-    > - Database :  Oracle Database
+   >  - 서버단 및 로직 개발 : Servlet /JAVA
+   > - Database :  Oracle Database
 ![stable_room Used Lang & Tool](https://user-images.githubusercontent.com/42515875/45603666-e79d2200-ba68-11e8-89dc-866848cc4d6d.png)
  
 
