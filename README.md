@@ -7,7 +7,7 @@
  > - Database :  Oracle Database
 ![stable_room Used Lang & Tool](https://user-images.githubusercontent.com/42515875/45603666-e79d2200-ba68-11e8-89dc-866848cc4d6d.png)
          
-- 개발 목적 : 학교 안 남학생 안정실(침대 9개)에서 근무하면서 수기로 작성하는 입퇴실현황을 데이터베이스에 저장시키고, 데이터베이스에 저장된 입퇴실 정보로 학생들이 침대가 몇개 남았는지 스마트폰으로 확인할 수 있도록 하는 **Web Application**입니다. <br>
+- 개발 목적 : 학교 안 남학생 안정실(침대 9개)에서 근무하면서 수기로 작성하는 입퇴실현황을 데이터베이스에 저장시키고, 데이터베이스에 저장된 입퇴실 정보로 학생들이 침대가 몇개 남았는지 스마트폰으로 확인할 수 있도록 하는 **Web Application**입니다. <br><br><br>
 # 개발 세부 내용 : MVC모델. <br>
 <br>
 
@@ -23,34 +23,40 @@
 
                 
 ## 일반 사용자가 보는 페이지
+<br>
 >  - 입퇴실 처리 불가능.
 >  - 입퇴실 현황만 확인 가능.
 >   ![일반 사용자 페이지](https://user-images.githubusercontent.com/42515875/45603702-334fcb80-ba69-11e8-9952-9d987e2d4962.png)
- ## 관리자가 보는 페이지
+ 
+ <br>
+ ## 관리자가 보는 페이지<br>
  > - 입퇴실 관리 가능.
  >  - 관리자 회원가입 가능.
  > ![enter image description here](https://user-images.githubusercontent.com/42515875/45603977-a1e15900-ba6a-11e8-98d6-2b02b9ffea2b.png)
-
+<br>
 ## 입실 등록
+<br>
 > - 관리자 권한으로 입실처리.
 >  - JSTL을 활용하여, **Click**한 **침대번호**를 {param?no=침대번호}을 사용해서 해당 **침대 번호**를 입실 페이지로 자동 전달.
 > ![enter image description here](https://user-images.githubusercontent.com/42515875/45604234-5da38800-ba6d-11e8-9c75-fa3c3b53a229.png)
-## 퇴실 기능
+<br>
+
+## 퇴실 기능<br>
 > - 메인 화면에 침대 이미지에 **Mouseover**하면 퇴실버튼으로 바뀝니다. **Click** 하면 아래 그림과 같은 퇴실 페이지로 이동합니다.
 > - JSTL을 활용하여, **Click**한 **침대번호**를 {param?no=7}을 사용해서 해당 침대 번호 퇴실 페이지로  자동 전달.
 > - 퇴실 버튼만 **Click** 하면됨. 
 ![enter image description here](https://user-images.githubusercontent.com/42515875/45603708-3ba80680-ba69-11e8-8894-cff201cc00a7.png)
+<br>
 
-
-## 관리자 권한으로 다른 관리자 가입시키기
+## 관리자 권한으로 다른 관리자 가입시키기<br>
 > - JSP/CSS 직접 구현.
 >  - 중복확인 기능.
 >  - id는 admin+번호 입력으로 가능.
 >   - **비밀번호** 및 **비밀번호 확인** 판별.
 >    ![enter image description here](https://user-images.githubusercontent.com/42515875/45603720-4ebad680-ba69-11e8-889f-fe0e908da003.png)
 
-
-## stable_room Used Lang & Tool        
+<br>
+## stable_room Used Lang & Tool<br>        
    >  - Front-end : JSP/ CSS/ HTML/ JavaScript
     >  - 서버단 및 로직 개발 : Servlet /JAVA
     > - Database :  Oracle Database
