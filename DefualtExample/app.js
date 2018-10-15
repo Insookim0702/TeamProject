@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 app.use(static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extends:false}));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 //라우터 함수를 쓰기 위해 express의 router매소드를 호출하는 객체 router
 var router =express.Router();
 
